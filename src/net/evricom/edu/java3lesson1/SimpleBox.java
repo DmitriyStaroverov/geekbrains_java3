@@ -24,6 +24,7 @@ class BoxDemoApp{
         SimpleBox intBox1 = new SimpleBox(20);
         SimpleBox intBox2 = new SimpleBox(30);
         System.out.println(intBox1.getObject().getClass());
+
         if (intBox1.getObject() instanceof Integer && intBox2.getObject() instanceof Integer){
             int sum = (Integer) intBox1.getObject() + (Integer) intBox2.getObject();
             System.out.println("sum = " + sum);
@@ -38,6 +39,5 @@ class BoxDemoApp{
         } catch (ClassCastException e){
             e.printStackTrace();
         }
-
     }
 }

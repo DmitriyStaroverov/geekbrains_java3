@@ -1,7 +1,5 @@
 package net.evricom.edu.java3lesson1;
 
-import javafx.stage.Stage;
-
 /**
  * ограниченных типов
  * created by dima on 08.08.2019 16:40
