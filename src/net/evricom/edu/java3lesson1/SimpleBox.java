@@ -17,6 +17,7 @@ public class SimpleBox {
     public SimpleBox(Object object) {
         this.object = object;
     }
+
 }
 
 class BoxDemoApp{
