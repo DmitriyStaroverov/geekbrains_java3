@@ -10,6 +10,7 @@ public class SimpleBox {
         return object;
     }
 
+
     public void setObject(Object object) {
         this.object = object;
     }
