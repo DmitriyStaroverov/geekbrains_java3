@@ -38,14 +38,34 @@ public class MainDB {
         //statement.execute("DELETE FROM STUDENTS");
 
         long t1 = System.currentTimeMillis();
-        connection.setAutoCommit(false);
-        for (int i=0; i<500; i++) {
-            statement.executeUpdate("INSERT INTO students (name,score) VALUES ('name', 100)");
-        }
-        connection.setAutoCommit(true);
+//        connection.setAutoCommit(false);
+//        for (int i=0; i<500; i++) {
+//            statement.executeUpdate("INSERT INTO students (name,score) VALUES ('name', 100)");
+//        }
+//        connection.setAutoCommit(true);
+//
+
+//        String sql = "INSERT INTO students (name, score) VALUES (?,?)";
+//        preparedStatement = connection.prepareStatement(sql);
+//        for (int i = 1; i < 4; i++) {
+//            preparedStatement.setString(1,"Bob" + i);
+//            preparedStatement.setString(2,"10" + i);
+//            preparedStatement.addBatch();
+//        }
+//        preparedStatement.executeBatch();
+
+        statement.executeUpdate("INSERT INTO students (name, score) VALUES ('петя1', '100') ");
+        Savepoint savepoint = connection.setSavepoint();
+        statement.executeUpdate("INSERT INTO students (name, score) VALUES ('петя2', '200') ");
+        connection.rollback(savepoint);
+        statement.executeUpdate("INSERT INTO students (name, score) VALUES ('петя3', '300') ");
+
+        connection.commit();
+
 
         long t2 = System.currentTimeMillis();
         System.out.println(t2 - t1);
+
 
 //        ResultSet resultSet = statement.executeQuery("SELECT * FROM students");
 //        ResultSetMetaData metaData = resultSet.getMetaData();
