@@ -44,7 +44,6 @@ public class MainDB {
 //        }
 //        connection.setAutoCommit(true);
 //
-
 //        String sql = "INSERT INTO students (name, score) VALUES (?,?)";
 //        preparedStatement = connection.prepareStatement(sql);
 //        for (int i = 1; i < 4; i++) {
