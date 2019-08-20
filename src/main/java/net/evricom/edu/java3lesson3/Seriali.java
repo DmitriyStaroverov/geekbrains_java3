@@ -46,7 +46,6 @@ class Human{
 
     public Human(int x) {
         this.x = x;
-        System.out.println(x);
     }
 
     int x;
@@ -66,6 +65,6 @@ class Student extends Human implements Serializable{
     }
 
     void info(){
-        System.out.println("ID:" + id + " Name:" + name + " X: " + x + " Book " + book.title);
+        System.out.println("ID:" + id + " Name:" + name + " X: " + x);
     }
 }
