@@ -1,6 +1,7 @@
 package net.evricom.edu.java3lesson3;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * created by dima on 18.08.2019 15:43
@@ -10,30 +11,23 @@ import java.io.*;
 public class BuffRead {
 
     //
-    public static void main(String[] args) {
-        BufferedReader bufferedReader = null;
-        FileReader fileReader = null;
+    public static void main(String[] args) throws IOException {
         File file = new File("123.txt");
-        String currLine;
-
         long t = System.currentTimeMillis();
+        InputStream in = new FileInputStream(file);
+        //BufferedInputStream in = new BufferedInputStream(new FileInputStream(file));
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-        try {
-            fileReader = new FileReader(file);
-            bufferedReader = new BufferedReader(fileReader);
-
-            //bufferedReader.
-
-            while ((currLine = bufferedReader.readLine()) != null){
-                System.out.println(currLine);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        int x;
+        while ((x = in.read()) != -1) {
+            out.write(x);
+            //System.out.println(x);
         }
+        byte[] b = out.toByteArray();
+        System.out.println(Arrays.toString(b));
+
+        in.close();
+        out.close();
         System.out.println("\nВремя: " + (System.currentTimeMillis() - t));
-
-
     }
 }
