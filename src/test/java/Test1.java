@@ -5,7 +5,7 @@ import org.junit.*;
  * created by dima on 13.09.2019 13:58
  */
 public class Test1 {
-    Calculator calculator;
+    private Calculator calculator;
     @Before
     public void init(){
         System.out.println("init");

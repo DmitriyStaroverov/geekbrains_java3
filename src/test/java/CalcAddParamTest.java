@@ -29,7 +29,7 @@ public class CalcAddParamTest {
     private int b;
     private int c;
 
-    Calculator calculator;
+    private Calculator calculator;
 
     public CalcAddParamTest(int a, int b, int c) {
         this.a = a;

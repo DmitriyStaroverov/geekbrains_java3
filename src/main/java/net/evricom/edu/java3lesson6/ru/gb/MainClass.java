@@ -21,12 +21,7 @@ public class MainClass {
             }
         });
 
-        logger.getHandlers()[0].setFilter(new Filter() {
-            @Override
-            public boolean isLoggable(LogRecord record) {
-                return record.getMessage().startsWith("Java");
-            }
-        });
+        logger.getHandlers()[0].setFilter(record -> record.getMessage().startsWith("Java"));
 
         Handler handler = new FileHandler("mylog.log");
         handler.setLevel(Level.ALL);
