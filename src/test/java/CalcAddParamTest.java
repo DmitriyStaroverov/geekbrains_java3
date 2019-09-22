@@ -11,7 +11,6 @@ import java.util.Collection;
 /**
  * created by dima on 13.09.2019 15:28
  */
-
 @RunWith(Parameterized.class)
 public class CalcAddParamTest {
 
